@@ -8,6 +8,9 @@ export default class Todo extends Component {
         this.state = {
             todos: store.getState()
         }
+        store.subscribe(() => {
+            this.setState({todos: store.getState()});
+        })
     }
 
     // componentWillMount() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, Text } from 'react-native';
+import { ListView, Text, StyleSheet, View } from 'react-native';
 
 export default class TodoList extends Component {
     constructor(props) {
@@ -9,12 +9,41 @@ export default class TodoList extends Component {
             dataSource: ds.cloneWithRows(props.todos)
         }
     }
+
+    renderRow = (data) => {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.todo}>{data.todo}</Text>
+            </View>
+        )
+    }
+
     render() {
         return (
             <ListView
                 dataSource={this.state.dataSource}
-                renderRow={(data) => <Text>{data.todo}</Text>}
+                renderRow={ this.renderRow }
             />
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        height: 78,
+        width: 340,
+        paddingTop: 27.5,
+        paddingBottom: 27.5,
+        paddingLeft: 35,
+        marginBottom: 20,
+        marginLeft: 20,
+        elevation: 3,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 3},
+        shadowOpacity: 0.2,
+        shadowRadius: 3
+    }
+})
