@@ -12,7 +12,7 @@ class todo_app extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor='#42144E'/>
-                <Text style={styles.titleBar}>ToDo List</Text>
+                <Text style={styles.titleBar}>Todo List</Text>
             </View>
         );
     }
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F3F6'
   },
   titleBar: {
-      paddingTop: 40,
+      paddingTop: 15,
       paddingBottom: 10,
       textAlign: 'center',
       backgroundColor: '#42144E',
