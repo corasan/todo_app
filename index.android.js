@@ -6,13 +6,15 @@ import React, {
   View,
   StatusBar
 } from 'react-native';
+import Todo from './src/components/Todo.js';
 
 class todo_app extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar backgroundColor='#42144E'/>
+                <StatusBar barStyle='light-content' />
                 <Text style={styles.titleBar}>Todo List</Text>
+                <Todo/>
             </View>
         );
     }
@@ -24,8 +26,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F3F6'
   },
   titleBar: {
-      paddingTop: 15,
-      paddingBottom: 10,
+      paddingTop: 35,
+      paddingBottom: 15,
       textAlign: 'center',
       backgroundColor: '#42144E',
       color: '#FFFFFF',
