@@ -1,10 +1,10 @@
 import Firebase from 'firebase';
-const ref = new Firebase('https://sms-react.firebaseio.com/');
+const ref = new Firebase('https://sms-react.firebaseio.com/todos');
 
-// function fetchTodos() {
-//     return(dispatch) {
-//         ref.on('value', function(data) {
-//             dispatch(data.val());
-//         });
-//     }
-// }
+export function fetchTodos() {
+    return (dispatch) => {
+        ref.once('value', function(data) {
+            dispatch({todo: data.val()});
+        });
+    }
+}
